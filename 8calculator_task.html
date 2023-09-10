@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c</title>
+</head>
+<style>  
+body{
+    background-image:linear-gradient( rgb(101, 102, 97),rgb(128, 133, 129));
+    margin: 10px;
+   padding: 10px;
+}
+.one{
+    display: flex;
+    flex-direction: column;
+
+background-image: linear-gradient(rgb(255, 255, 255),rgb(255, 255, 255));
+width: 300px;
+height: 350px;
+margin-left: 37%;
+border: double  30px;
+border-color: rgb(49, 49, 49);
+border-radius: 10px;
+
+margin-top: 13%;
+}
+.two{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+   
+}
+button{
+    background-image:linear-gradient(rgb(0, 0, 0),rgb(0, 0, 0)) ;
+width: 90px;
+height: 30px;
+color: rgb(255, 255, 255);
+font-size: 15px;
+border-color: gray;
+border: 3px;
+margin-top: 28px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+position: absolute;
+}
+input{
+   font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 30px;
+   
+}
+h3{
+font-weight: 900;
+font-family: Arial, Helvetica, sans-serif;
+}
+#result{
+    margin-top: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: gray;
+}
+
+   </style>
+<body>
+   
+    <div class="one">
+        <div class="two">
+        <h3>Calculator</h3>
+    </div>
+    
+            <div class="two">
+            <input type="text" id="input">
+        </div>
+  <div class="two">
+      
+            <button id="button" onclick="sho()">calculate</button>
+        </div>
+        <div class="two" id="result"></div>
+    </div>
+
+    <script>
+        
+        function sho(){
+            let input=document.getElementById("input").value
+    let operator;
+    if(input.includes("+")){
+        operator="+";
+    }
+    else if(input.includes("-")){
+        operator="-";
+    }
+    else if(input.includes("*")){
+        operator="*";
+    }
+    else if(input.includes("/")){
+        operator="/";
+    }
+    else if(input.includes("%")){
+        operator="%";
+    }
+let splitting=input.split(operator);
+           let firstvalue=Number(splitting[0]);
+           let secondvalue=Number (splitting[1]);
+          let result1;
+          switch (operator) {
+            case "+":
+                result1=(firstvalue)+(secondvalue);
+                break;
+                case "-":
+                result1=(firstvalue)-(secondvalue);
+                break;
+                case "*":
+                result1=(firstvalue)*(secondvalue);
+                break;
+                case "/":
+                result1=(firstvalue)/(secondvalue);
+                break;
+
+                case "%":
+                result1=(firstvalue)%(secondvalue);
+                break;
+                
+                default:
+                    alert("Invalid Operator!");
+          }
+          document.getElementById("result").innerHTML="Answer:"+result1;
+        }    </script>
+</body>
+</html>
